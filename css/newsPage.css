@@ -1,0 +1,12 @@
+.news {
+    width: 200px;
+    padding: 2em;
+    text-align: center;
+}
+.newsImg {
+    height: 200px;
+    width: 200px;
+}
+.newsText {
+    margin: 0;
+}
