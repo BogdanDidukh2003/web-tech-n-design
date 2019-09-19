@@ -1,12 +1,23 @@
-.news {
-    width: 200px;
-    padding: 2em;
-    text-align: center;
-}
 .newsImg {
-    height: 200px;
-    width: 200px;
+    max-height: 200px;
+    max-width: 200px;
 }
 .newsText {
     margin: 0;
+}
+.newsBlock {
+    position: relative;
+    display: inline-block;
+    max-width: 200px;
+    height: fit-content;
+    padding: 2em;
+    flex: 0 0 33.333333%;
+}
+.newsBlock:hover {
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+.flexContainer {
+    display: flex;
+    flex-wrap: wrap;
+    /*justify-content: space-between;*/
 }

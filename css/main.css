@@ -3,39 +3,68 @@ body {
     margin: 0;
 }
 main {
+    max-width: 100%;
+    min-height: 100vh;
+    margin: 0 auto;
+    background-color: #f1f7fe;
+    padding: 2em;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+main article {
     max-width: 800px;
     margin: 0 auto;
-    margin-top: 2em;
+    padding-top: 3em;
+}
+.backgroundImg {
+    background-color: #ddd;
+    background-image: url("../img/NeffexSoldier.jpg");
+    height: 100%;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+.transparentScreen {
+    height: 100vh;
 }
 
 /*header style*/
 header {
-    position: relative;
+    position: fixed;
     width: 100%;
     list-style: none;
     font-weight: bold;
-    text-align: center;
-    background-color: black;
+    background-image: linear-gradient(#4b86c7, #140220);
+    z-index: 1;
 }
 #topBar {
-    display: inline-block;
-    margin-left: 5em;
-    margin-right: 5em;
-    margin-top: 0.5em;
-    margin-bottom: 0.5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 8vh;
 }
 #logo {
-    float: left;
-    height: 3em;
-    margin-top: 0.5em;
-    margin-right: 2em;
+    height: 6vh;
+    display: inline-block;
+    margin-right: 4vh;
 }
 .navigationTab {
     display: inline-block;
-    padding: 1em;
+    padding: 1vh;
+    margin-left: 1vh;
+    margin-right: 1vh;
     color: white;
     text-decoration: none;
     font-size: 120%;
+    transition: color 0.4s ease;
+}
+.navigationTab:hover {
+    color: #00fef4;
+}
+.navigationTab:focus {
+    border: solid 1px #555;
+    box-shadow: inset 12px 0 15px -4px rgba(31, 73, 125, 0.8), -12px 0 8px -4px rgba(31, 73, 125, 0.8);
+    border-radius:15px;
 }
 .shadowing {
     border-bottom: 1px solid grey;
@@ -43,17 +72,19 @@ header {
 
 /*footer style*/
 footer {
-    margin-top: 2em;
     position: relative;
     width: 100%;
-    list-style: none;
     text-align: center;
-    background-color: #e9ebee;
+    background-image: linear-gradient(#e9ebee, white);
     border-top: 1px solid black;
 }
 .footerNav {
     padding: 1em;
     color: darkblue;
+}
+footer p {
+    margin-bottom: 0;
+    padding-bottom: 0.5em;
 }
 
 /*dropdown menu*/
@@ -67,7 +98,7 @@ footer {
     background-color: #f1f1f1;
     min-width: 200px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
+    z-index: 1.5;
 }
 .dropdownContent a {
     color: black;
@@ -80,7 +111,4 @@ footer {
 }
 .dropdown:hover .dropdownContent {
     display: block;
-}
-.dropdown:hover .dropButton {
-    background-color: #081741;
 }
