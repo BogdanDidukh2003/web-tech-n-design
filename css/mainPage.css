@@ -34,7 +34,7 @@ h1 {
     opacity: 0.5;
     mix-blend-mode: hard-light;
 }
-.glitch:hover:before
+.glitch:before
 {
     animation: glitch 1.8s ease infinite;
 }
