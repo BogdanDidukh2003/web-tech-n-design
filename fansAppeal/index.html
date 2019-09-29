@@ -2,66 +2,108 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>NEFFEX</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>NEFFEX: Fan's Appeal</title>
+
     <link rel="shortcut icon" href="../img/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
     <link type="text/css" rel="stylesheet" href="../css/main.css">
     <link type="text/css" rel="stylesheet" href="../css/fansAppealPage.css">
 </head>
 <body>
-<header class="shadowing">
-    <nav id="topBar">
-        <img id="logo" src="../img/Logo.png" alt="Logo"/>
-        <a class="navigationTab" href="../index.html">Main</a>
-        <a class="navigationTab" href="../news">News</a>
-        <div class="dropdown">
-            <a class="navigationTab dropButton" href="../forFans/fanClub">For fans</a>
-            <div class="dropdownContent">
-                <a href="../forFans/fanClub">Fun club</a>
-                <a href="../forFans/tourSchedule">Tour schedule</a>
-                <a href="../forFans/lyrics">Lyrics</a>
-            </div>
+<header>
+    <nav class="navbar navbar-custom navbar-dark navbar-expand-md fixed-top shadow-sm">
+        <span href="index.html" class="navbar-brand"><img class="logo" src="../img/Logo.png" alt="Logo"/></span>
+        <button type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
+                class="navbar-toggler">
+            <span class="navbar-toggler-icon"></span></button>
+        <div id="navbarSupportedContent" class="collapse navbar-collapse">
+            <ul class="navbar-nav mx-md-auto ml-auto">
+                <li class="nav-item"><a class="nav-link nav-link-custom-style" href="../index.html">Main</a></li>
+                <li class="nav-item"><a class="nav-link nav-link-custom-style" href="../news">News</a></li>
+                <li class="nav-item">
+                    <div class="dropdown">
+                        <a class="nav-link nav-link-custom-style dropButton" href="#">For fans</a>
+                        <nav class="dropdownContent">
+                            <a href="../forFans/fanClub">Fun club</a>
+                            <a href="../forFans/tourSchedule">Tour schedule</a>
+                            <a href="../forFans/lyrics">Lyrics</a>
+                        </nav>
+                    </div>
+                </li>
+                <li class="nav-item"><a class="nav-link nav-link-custom-style" href="index.html">Fans appeal</a></li>
+                <li class="nav-item"><a class="nav-link nav-link-custom-style" href="../concertVenue">Concert venue</a></li>
+                <li class="nav-item"><a class="nav-link nav-link-custom-style" href="../admin">Admin</a></li>
+            </ul>
         </div>
-        <a class="navigationTab" href="index.html">Fans appeal</a>
-        <a class="navigationTab" href="../concertVenue">Concert venue</a>
-        <a class="navigationTab" href="../admin">Admin</a>
     </nav>
 </header>
 <main>
     <article>
-        <div class="commentSection">
-            <div class="commentDetail">
-                <p>Fan name</p>
-                <p>22:22</p>
-                <p>09.09.2019</p>
+        <div class="container">
+            <div class="row shadow-sm mb-4">
+                <div class="col-2 order-1">
+                        <p>Fan name</p>
+                        <p>22:22</p>
+                        <p>09.09.2019</p>
+                    </div>
+                <div class="col-10 order-2">
+                        <p>My comment</p>
+                    </div>
             </div>
-            <p class="commentContent">
-                My comment
-            </p>
-        </div>
-        <div class="commentSection">
-            <div class="commentDetail">
-                <p>Fan name</p>
-                <p>22:22</p>
-                <p>09.09.2019</p>
+            <div class="row shadow-sm mb-4">
+                <div class="col-2 order-1">
+                    <p>Fan name</p>
+                    <p>22:22</p>
+                    <p>09.09.2019</p>
+                </div>
+                <div class="col-10 order-2">
+                    <p>My comment</p>
+                </div>
             </div>
-            <p class="commentContent">
-                My comment
-            </p>
-        </div>
-        <div class="commentSection">
-            <div class="commentDetail">
-                <p>Fan name</p>
-                <p>22:22</p>
-                <p>09.09.2019</p>
+            <div class="row shadow-sm mb-4">
+                <div class="col-2 order-1">
+                    <p>Fan name</p>
+                    <p>22:22</p>
+                    <p>09.09.2019</p>
+                </div>
+                <div class="col-10 order-2">
+                    <p>My comment</p>
+                </div>
             </div>
-            <p class="commentContent">
-                My comment
-            </p>
+            <div class="row shadow-sm mb-4">
+                <div class="col-2 order-1">
+                    <p>Fan name</p>
+                    <p>22:22</p>
+                    <p>09.09.2019</p>
+                </div>
+                <div class="col-10 order-2">
+                    <p>My comment</p>
+                </div>
+            </div>
+            <div class="row shadow-sm mb-4">
+                <div class="col-2 order-1">
+                    <p>Fan name</p>
+                    <p>22:22</p>
+                    <p>09.09.2019</p>
+                </div>
+                <div class="col-10 order-2">
+                    <p>My comment</p>
+                </div>
+            </div>
+            <div class="row shadow-sm mb-4">
+                <div class="col-2 order-1 mx-auto text-center">
+                    <button class="btn btn-primary" type="button">Send</button>
+                </div>
+                <div class="col-10 order-2 form-group shadow-textarea">
+                    <label for="commentSection"></label>
+                    <textarea id="commentSection" class="form-control z-depth-1" rows="6" placeholder="Write a comment..."></textarea>
+                </div>
+            </div>
         </div>
-        <form id="commentForm">
-            <button id="sendButton" type="button">Send</button>
-            <textarea rows="4" placeholder="Write a comment..."></textarea>
-        </form>
     </article>
 </main>
 <footer>
@@ -75,5 +117,7 @@
     </nav>
     <p>Founded in 2014</p>
 </footer>
+<script src="../bootstrap/js/jquery.slim.min.js"></script>
+<script src="../bootstrap/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
