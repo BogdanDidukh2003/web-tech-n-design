@@ -2,32 +2,71 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>NEFFEX</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>NEFFEX: Admin</title>
+
     <link rel="shortcut icon" href="../img/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
     <link type="text/css" rel="stylesheet" href="../css/main.css">
     <link type="text/css" rel="stylesheet" href="../css/adminPage.css">
 </head>
 <body>
-<header class="shadowing">
-    <nav id="topBar">
-        <img id="logo" src="../img/Logo.png" alt="Logo"/>
-        <a class="navigationTab" href="../index.html">Main</a>
-        <a class="navigationTab" href="../news">News</a>
-        <div class="dropdown">
-            <a class="navigationTab dropButton" href="../forFans/fanClub">For fans</a>
-            <div class="dropdownContent">
-                <a href="../forFans/fanClub">Fun club</a>
-                <a href="../forFans/tourSchedule">Tour schedule</a>
-                <a href="../forFans/lyrics">Lyrics</a>
-            </div>
+<header>
+    <nav class="navbar navbar-custom navbar-dark navbar-expand-md fixed-top shadow-sm">
+        <span href="index.html" class="navbar-brand"><img class="logo" src="../img/Logo.png" alt="Logo"/></span>
+        <button type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
+                class="navbar-toggler">
+            <span class="navbar-toggler-icon"></span></button>
+        <div id="navbarSupportedContent" class="collapse navbar-collapse">
+            <ul class="navbar-nav mx-md-auto ml-auto">
+                <li class="nav-item"><a class="nav-link nav-link-custom-style" href="../index.html">Main</a></li>
+                <li class="nav-item"><a class="nav-link nav-link-custom-style" href="../news">News</a></li>
+                <li class="nav-item">
+                    <div class="dropdown">
+                        <a class="nav-link nav-link-custom-style dropButton" href="#">For fans</a>
+                        <nav class="dropdownContent">
+                            <a href="../forFans/fanClub">Fun club</a>
+                            <a href="../forFans/tourSchedule">Tour schedule</a>
+                            <a href="../forFans/lyrics">Lyrics</a>
+                        </nav>
+                    </div>
+                </li>
+                <li class="nav-item"><a class="nav-link nav-link-custom-style" href="../fansAppeal">Fans appeal</a></li>
+                <li class="nav-item"><a class="nav-link nav-link-custom-style" href="../concertVenue">Concert venue</a></li>
+                <li class="nav-item"><a class="nav-link nav-link-custom-style" href="index.html">Admin</a></li>
+            </ul>
         </div>
-        <a class="navigationTab" href="../fansAppeal">Fans appeal</a>
-        <a class="navigationTab" href="../concertVenue">Concert venue</a>
-        <a class="navigationTab" href="index.html">Admin</a>
     </nav>
 </header>
 <main>
-
+    <article>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-10 mx-auto p-3 order-1 order-md-2">
+                    <img class="img-fluid" src="../img/neffexBestOfMe.jpg" alt="New image">
+                </div>
+                <div class="col-md-6 order-2 order-md-1 mx-auto m-3 text-center">
+                    <button class="btn btn-secondary pl-5 pr-5" type="button">Add image</button>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-10 mx-auto order-1 order-md-2 form-group">
+                    <label for="newsTitle"></label>
+                    <textarea id="newsTitle" class="form-control z-depth-1" rows="1" placeholder="News title"></textarea>
+                    <label for="newsBody"></label>
+                    <textarea id="newsBody" class="form-control z-depth-1" rows="6" placeholder="News body"></textarea>
+                </div>
+                <div class="col-md-6 order-2 order-md-1 mx-auto mt-4 text-center">
+                    <button class="btn btn-secondary pl-5 pr-5" type="button">Send</button>
+                </div>
+            </div>
+        </div>
+    </article>
 </main>
 <footer>
     <p id="contactInfo"><em>CONTACT INFO</em></p>
@@ -40,5 +79,7 @@
     </nav>
     <p>Founded in 2014</p>
 </footer>
+<script src="../bootstrap/js/jquery.slim.min.js"></script>
+<script src="../bootstrap/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
