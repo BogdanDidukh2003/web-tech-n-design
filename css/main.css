@@ -1,73 +1,41 @@
 /*general style*/
 body {
+    font-family: "Times New Roman";
     margin: 0;
 }
 main {
     max-width: 100%;
     min-height: 100vh;
     margin: 0 auto;
-    background-color: #f1f7fe;
-    padding: 2em;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    background-color: #fefffe;
+    padding-bottom: 2em;
 }
 main article {
     max-width: 800px;
     margin: 0 auto;
-    padding-top: 3em;
-}
-.backgroundImg {
-    background-color: #ddd;
-    background-image: url("../img/NeffexSoldier.jpg");
-    height: 100%;
-    background-position: top;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-}
-.transparentScreen {
-    height: 100vh;
 }
 
 /*header style*/
 header {
-    position: fixed;
+    height: 100px;
     width: 100%;
-    list-style: none;
+    background-color: #fefffe;
     font-weight: bold;
-    background-image: linear-gradient(#4b86c7, #140220);
     z-index: 1;
 }
-#topBar {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 8vh;
+.navbar-custom {
+    background-image: linear-gradient(#4b86c7, #140220);
+    font-size: larger;
 }
-#logo {
-    height: 6vh;
-    display: inline-block;
-    margin-right: 4vh;
-}
-.navigationTab {
-    display: inline-block;
-    padding: 1vh;
-    margin-left: 1vh;
-    margin-right: 1vh;
+.navbar-custom .nav-item .nav-link {
     color: white;
-    text-decoration: none;
-    font-size: 120%;
     transition: color 0.4s ease;
 }
-.navigationTab:hover {
+.navbar-custom .nav-item:hover .nav-link {
     color: #00fef4;
 }
-.navigationTab:focus {
-    border: solid 1px #555;
-    box-shadow: inset 12px 0 15px -4px rgba(31, 73, 125, 0.8), -12px 0 8px -4px rgba(31, 73, 125, 0.8);
-    border-radius:15px;
-}
-.shadowing {
-    border-bottom: 1px solid grey;
+.logo {
+    height: 6vh;
 }
 
 /*footer style*/
@@ -80,7 +48,6 @@ footer {
 }
 .footerNav {
     padding: 1em;
-    color: darkblue;
 }
 footer p {
     margin-bottom: 0;

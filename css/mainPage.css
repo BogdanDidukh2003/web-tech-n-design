@@ -1,45 +1,27 @@
-h1 {
-    text-align: center;
-}
-#bandPhoto {
-    width: 60%;
-}
-.centerDiv {
-    text-align: center;
-}
-
 /*Glitch background animation*/
-.glitch
-{
+.glitch {
     position: relative;
     width: 100%;
     height: 100vh;
     background-image: url(../img/NeffexSoldier.jpg);
-    background-position: top;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 100%;
 }
-.glitch:before
-{
+.glitch:before {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
     height: 100vh;
     background-image: url(../img/NeffexSoldier.jpg);
-    background-position: top;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 100%;
     opacity: 0.5;
     mix-blend-mode: hard-light;
 }
-.glitch:before
-{
+.glitch:before {
     animation: glitch 1.8s ease infinite;
 }
-@keyframes glitch
-{
+@keyframes glitch {
     0% {
         filter: hue-rotate(0deg);
     }
