@@ -20,7 +20,7 @@ function addAppeal() {
     }
     const time = new Date();
     userInfo.innerHTML = "<p>" + nickname + "</p>" + "<p>" + time.getHours() + ":"
-        + (0 < time.getMinutes() < 10 ? "0" : "") + (time.getMinutes() === 0 ? "00" : "") + time.getMinutes()
+        + (time.getMinutes() < 10 ? "0" : "") + (time.getMinutes() === 0 ? "0" : "") + time.getMinutes()
         + "</p>" + "<p>" + time.getDate() + "." + (time.getMonth() + 1) + "." + time.getFullYear() + "</p>";
     comment.innerHTML = "<p>" + commentText + "</p>";
 
