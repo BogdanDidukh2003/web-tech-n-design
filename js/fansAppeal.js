@@ -13,7 +13,7 @@ function addAppeal() {
     const comment = document.createElement("div");
     comment.className = "col-10 order-2";
 
-    const nickname = prompt("Enter your nickname: ", "User");
+    const nickname = prompt("Enter your nickname: ", "User").trim();
     if (nickname === "" || nickname == null) {
         alert("Nickname is incorrect!");
         return;
