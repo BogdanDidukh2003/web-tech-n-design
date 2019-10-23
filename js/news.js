@@ -1,4 +1,7 @@
-var allNews = [{imgSrc: "../img/neffexBestOfMe.jpg", title: "Title", body: "Body"}];
+var allNews = JSON.parse(localStorage.getItem("news"));
+if (allNews == null) {
+    allNews = [];
+}
 for (var i = 0; i < allNews.length; i++) {
     addNews(allNews[i].imgSrc, allNews[i].title, allNews[i].body);
 }

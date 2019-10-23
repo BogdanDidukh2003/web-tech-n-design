@@ -1,6 +1,9 @@
 document.getElementById("addImageButton").addEventListener("click", addImage);
 document.getElementById("sendNewsButton").addEventListener("click", sendNews);
-allNews = [];
+var allNews = JSON.parse(localStorage.getItem("news"));
+if (allNews == null) {
+    allNews = [];
+}
 
 function addImage() {
     const input = document.querySelector("input[type=file]");
@@ -27,8 +30,10 @@ function sendNews() {
     }
 
     allNews.push({imgSrc: newsImageSrc, title: newsTitle, body: newsBody});
-    console.log(allNews);
+    localStorage.setItem("news", JSON.stringify(allNews));
+
     document.getElementById("newsTitle").value = "";
     document.getElementById("newsBody").value = "";
     document.getElementById("sendNewsButton").blur();
+    alert("Successfully added!")
 }
