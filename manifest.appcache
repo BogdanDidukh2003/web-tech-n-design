@@ -8,11 +8,16 @@ bootstrap/js/jquery.slim.min.js
 bootstrap/js/bootstrap.bundle.min.js
 css/main.css
 
+js/admin.js
+js/fansAppeal.js
+js/news.js
+
 index.html
 error.html
 news/index.html
 forFans/tourSchedule/index.html
 fansAppeal/index.html
+admin/index.html
 
 NETWORK:
 *

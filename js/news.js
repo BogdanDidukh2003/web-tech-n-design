@@ -1,9 +1,15 @@
-var allNews = JSON.parse(localStorage.getItem("news"));
-if (allNews == null) {
-    allNews = [];
-}
-for (var i = 0; i < allNews.length; i++) {
-    addNews(allNews[i].imgSrc, allNews[i].title, allNews[i].body);
+window.addEventListener("online", function (event) {
+    const allNews = readNewsFromLocalStorage();
+    sendNewsToServer(allNews);
+    showAllNews(allNews);
+    localStorage.removeItem("news");
+});
+
+const allNews = readNewsFromLocalStorage();
+if (isOnline()) {
+    sendNewsToServer(allNews);
+    showAllNews(allNews);
+    localStorage.removeItem("news");
 }
 
 function addNews(imgSrc, title, body) {
@@ -17,4 +23,25 @@ function addNews(imgSrc, title, body) {
     newsBlock.appendChild(card);
 
     document.getElementById("newsList").appendChild(newsBlock);
+}
+
+function showAllNews(allNews) {
+    allNews.forEach(function (news) {
+        addNews(news.imgSrc, news.title, news.body)
+    });
+}
+
+function sendNewsToServer(allNews) {
+    if (allNews.length) {
+        alert("Successfully sent to server!")
+    }
+}
+
+function readNewsFromLocalStorage() {
+    return JSON.parse(localStorage.getItem("news")) != null
+        ? JSON.parse(localStorage.getItem("news")) : [];
+}
+
+function isOnline() {
+    return window.navigator.onLine;
 }
