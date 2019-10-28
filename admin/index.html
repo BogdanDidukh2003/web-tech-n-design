@@ -47,10 +47,11 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6 col-10 mx-auto p-3 order-1 order-md-2">
-                    <img class="img-fluid" src="../img/neffexBestOfMe.jpg" alt="New image">
+                    <input type="file" name="newsImage" accept="image/*">
+                    <img id="uploadedImage" class="img-fluid mt-3" src="../img/neffexBestOfMe.jpg" alt="New image">
                 </div>
                 <div class="col-md-6 order-2 order-md-1 mx-auto m-3 text-center">
-                    <button class="btn btn-secondary pl-5 pr-5" type="button">Add image</button>
+                    <button id="addImageButton" class="btn btn-secondary pl-5 pr-5" type="button">Add image</button>
                 </div>
             </div>
         </div>
@@ -63,7 +64,7 @@
                     <textarea id="newsBody" class="form-control z-depth-1" rows="6" placeholder="News body"></textarea>
                 </div>
                 <div class="col-md-6 order-2 order-md-1 mx-auto mt-4 text-center">
-                    <button class="btn btn-secondary pl-5 pr-5" type="button">Send</button>
+                    <button id="sendNewsButton" class="btn btn-secondary pl-5 pr-5" type="button">Send</button>
                 </div>
             </div>
         </div>
@@ -80,6 +81,7 @@
     </nav>
     <p>Founded in 2014</p>
 </footer>
+<script src="../js/admin.js" type="text/javascript"></script>
 <script src="../bootstrap/js/jquery.slim.min.js"></script>
 <script src="../bootstrap/js/bootstrap.bundle.min.js"></script>
 </body>
