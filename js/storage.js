@@ -27,12 +27,10 @@ class IndexedDBProvider {
         };
 
         this._request.onsuccess = () => {
-            console.log("Success!");
             this._db = this._request.result;
         };
 
         this._request.onupgradeneeded = () => {
-            console.log("Upgrading...");
             this._db = this._request.result;
             this._db.createObjectStore("appeals", {keyPath: "id", autoIncrement: true});
             this._db.createObjectStore("news", {keyPath: "id", autoIncrement: true});
@@ -41,7 +39,6 @@ class IndexedDBProvider {
 
     add(key, value) {
         if (this._db) {
-            console.log("ADD executed");
             let transaction = this._db.transaction(key, "readwrite");
             let objStore = transaction.objectStore(key);
 
@@ -52,7 +49,6 @@ class IndexedDBProvider {
 
     get(key, callback) {
         if (this._db) {
-            console.log("GET executed");
             let transaction = this._db.transaction(key, "readwrite");
             let objStore = transaction.objectStore(key);
             let request = objStore.getAll();
@@ -65,7 +61,6 @@ class IndexedDBProvider {
 
     remove(key) {
         if (this._db) {
-            console.log("REMOVE executed");
             let transaction = this._db.transaction(key, "readwrite");
             let objStore = transaction.objectStore(key);
             objStore.clear();
