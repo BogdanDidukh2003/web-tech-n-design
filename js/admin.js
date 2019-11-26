@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function() {
             if (news) {
                 allNews = news;
             }
-            sendNewsToServer(allNews);
+            sendAllNewsToServer(allNews);
             provider.remove("news");
             allNews = [];
         });
@@ -48,6 +48,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
         if (isOnline()) {
             alert("Successfully sent to server");
+            sendNewsToServer(newsImageSrc, newsTitle, newsBody);
         } else {
             allNews.push({imgSrc: newsImageSrc, title: newsTitle, body: newsBody});
             provider.add("news", allNews);
@@ -59,9 +60,20 @@ document.addEventListener("DOMContentLoaded", function() {
         document.getElementById("sendNewsButton").blur();
     }
 
-    function sendNewsToServer(allNews) {
-        if (allNews.length) {
-            alert("Successfully sent to server!")
+    function sendNewsToServer(imgSrc, title, body) {
+        fetch("/all_news", {
+            method: "POST",
+            headers: {
+                "Content-type": "application/json"
+            },
+            body: JSON.stringify({imgSrc: imgSrc, title: title, body: body}),
+        })
+            .catch(error => console.error("Cannot fetch data:", error));
+    }
+
+    function sendAllNewsToServer(allNews) {
+        for (let i = 0; i < allNews.length; i++) {
+            sendNewsToServer(allNews[i].imgSrc, allNews[i].title, allNews[i].body)
         }
     }
 });

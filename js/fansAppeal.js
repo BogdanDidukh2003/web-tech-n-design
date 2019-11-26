@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
             if (appeals) {
                 allAppeals = appeals;
             }
-            sendAppealsToServer(allAppeals);
+            sendAllAppealsToServer(allAppeals);
             showAllAppeals(allAppeals);
             provider.remove("appeals");
             allAppeals = [];
@@ -20,10 +20,24 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
     if (isOnline()) {
-        sendAppealsToServer(allAppeals);
-        showAllAppeals(allAppeals);
+        sendAllAppealsToServer(allAppeals);
         provider.remove("appeals");
         allAppeals = [];
+
+        let req = new XMLHttpRequest();
+        req.open("GET", "/all_appeals", true);
+        req.send();
+        req.onreadystatechange = function() {
+            if (req.readyState === XMLHttpRequest.DONE) {
+                if (req.status != 200) {
+                    console.log("Something goes wrong!");
+                }
+                else {
+                    let data = JSON.parse(req.responseText);
+                    showAllAppeals(data);
+                }
+            }
+        };
     }
 
     function addAppeal() {
@@ -42,6 +56,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const time = new Date();
 
         if (isOnline()) {
+            sendAppealToServer(nickname, time, commentText);
             showAppeal(nickname, time, commentText);
             alert("Successfully sent to server");
         } else {
@@ -75,14 +90,25 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function showAllAppeals(allAppeals) {
-        allAppeals.forEach(function (appeal) {
-            showAppeal(appeal.name, new Date(appeal.time), appeal.text)
-        });
+        for (let i = 0; i < allAppeals.length; i++) {
+            showAppeal(allAppeals[i].name, new Date(allAppeals[i].time), allAppeals[i].text)
+        }
     }
 
-    function sendAppealsToServer(allAppeals) {
-        if (allAppeals.length) {
-            alert("Successfully sent to server!")
+    function sendAppealToServer(name, time, text) {
+        fetch("/all_appeals", {
+            method: "POST",
+            headers: {
+                "Content-type": "application/json"
+            },
+            body: JSON.stringify({name: name, time: time, text: text}),
+        })
+            .catch(error => console.error("Cannot fetch data:", error));
+    }
+
+    function sendAllAppealsToServer(allAppeals) {
+        for (let i = 0; i < allAppeals.length; i++) {
+            sendAppealToServer(allAppeals[i].name, allAppeals[i].time, allAppeals[i].text)
         }
     }
 });
